@@ -1,8 +1,8 @@
 ## Review
 
-_Congratulations, you've completed this Exercise and learned the basics of MCP !_
+_Congratulations, you've completed this Exercise and learned the basics of MCP for consulting scenarios!_
 
-<img src=https://octodex.github.com/images/collabocats.jpg alt=celebrate width=300 align=right>
+<img src="https://colby-timm.github.io/images/byte-celebrate.png" alt="Byte celebrating" width=300 align=right>
 
 ### What's next?
 

@@ -2,7 +2,7 @@
 
 Great work! You just connected your first MCP server to GitHub Copilot! 🎉
 
-🚨 It seems the teachers keep submitting bugs and requests! So many good ideas! We should probably look into them and start researching for other upgrades.
+🚨 It seems the practice leads keep submitting enhancement requests and capability improvements! So many good ideas! We should probably look into them and start researching for other consulting platform upgrades.
 
 Fortunately, with an MCP server for GitHub, triaging these and even doing some research to get ahead should be pretty quick! 🕵️
 
@@ -33,7 +33,7 @@ Isn't that cool?! Now let's do it! 👩‍🚀
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > Search for any other repositories for organizing extra curricular activities
+   > Search for any other repositories for managing consulting capabilities or professional skills tracking
    > ```
 
 1. When an MCP tool is required, Copilot will ask for permission. **Verify the request** and modify if necessary, then click **Continue**.
@@ -70,7 +70,7 @@ Isn't that cool?! Now let's do it! 👩‍🚀
 
 1. Since we are done researching, let's finish this chat session to clear the context. At the top of the **Copilot Chat** panel, click the **New Chat** icon (plus sign).
 
-1. With the new issues created, Mona should already be busy checking your work. Give her a moment and keep watch in the comments. You will see her respond with progress info and the next lesson.
+1. With the new issues created, Byte should already be busy checking your work. Give them a moment and keep watch in the comments. You will see Byte respond with progress info and the next lesson.
 
 
 > [!NOTE]

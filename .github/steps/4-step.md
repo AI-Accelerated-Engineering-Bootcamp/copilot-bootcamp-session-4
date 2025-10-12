@@ -1,6 +1,6 @@
 ## Step 4: Validating AI-generated code
 
-Great work on implementing that issue! Our extracurricular activities site is getting better every day! 💚
+Great work on implementing that issue! Our consulting capabilities platform is getting better every day! 💚
 
 While AI assistants like GitHub Copilot can dramatically improve productivity, it's essential to remember that **_you_** are responsible for reviewing and validating all work, generated or not.
 
@@ -40,4 +40,4 @@ While AI assistants like GitHub Copilot can dramatically improve productivity, i
    - Did Copilot comment on the bug report?
    </details>
 
-1. Once the comment has been created, Mona will start checking your work. Give her a moment to provide feedback or share the final review. Nice work! You're all done! 🎉
+1. Once the comment has been created, Byte will start checking your work. Give them a moment to provide feedback or share the final review. Nice work! You're all done! 🎉

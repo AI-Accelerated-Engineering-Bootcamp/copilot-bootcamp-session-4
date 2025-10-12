@@ -1,12 +1,12 @@
 ## Step 1: Introduction to MCP and environment setup
 
-<img width="150" align="right" alt="copilot logo" src="https://github.com/user-attachments/assets/4d22496d-850b-4785-aafe-11cba03cd5f2" />
+<img width="150" align="right" alt="Byte teacher" src="https://colby-timm.github.io/images/byte-teacher.png" />
 
-In the [Getting Started with GitHub Copilot](https://github.com/skills/getting-started-with-github-copilot) exercise, we were introduced to the Mergington High School's extracurricular activities website, which allowed students to sign up for events.
+Welcome to the Slalom Capabilities Management System! In this exercise, we'll build upon consulting expertise tracking to create a comprehensive platform for managing Slalom's consulting capabilities.
 
-And now we have a problem... but.. it's a good one! More teachers are asking to use it! 🎉
+And now we have an exciting opportunity... our consulting practice is growing! 🎉
 
-Our fellow teachers have lots of ideas but we can't seem to keep up with all the requests! 😮 To fix this issue, lets give GitHub Copilot an upgrade by enabling Model Context Protocol (MCP). To be more specific, we will add the GitHub MCP server, which will enable a combined workflow of issue management and website upgrades. 🧑‍🚀
+Our practice leads have lots of ideas for improving how we track and leverage our consulting capabilities, but we can't seem to keep up with all the enhancement requests! 😮 To fix this issue, let's give GitHub Copilot an upgrade by enabling Model Context Protocol (MCP). To be more specific, we will add the GitHub MCP server, which will enable a combined workflow of issue management and capabilities platform upgrades. 🧑‍🚀
 
 Let's get started!
 
@@ -75,7 +75,7 @@ Before we dive into MCP, let's start up our development environment and refamili
 
    <img width="350" alt="ports tab" src="https://github.com/user-attachments/assets/8d24d6b5-202d-4109-8174-2f0d1e4d8d44" />
 
-   ![Screenshot of Mergington High School WebApp](https://github.com/user-attachments/assets/5cb88d53-d948-457e-9f4b-403d697fa93a)
+   ![Screenshot of Slalom Capabilities Management Platform](https://colby-timm.github.io/images/byte-celebrate.png)
 
    </details>
 
@@ -129,7 +129,7 @@ Before we dive into MCP, let's start up our development environment and refamili
 
    > 🪧 **Note:** Pushing directly to `main` is not a recommended practice. It is only to simplify this exercise.
 
-1. Now that your MCP server configuration is pushed to GitHub, Mona should already be busy checking your work. Give her a moment and keep watch in the comments. You will see her respond with progress info and the next lesson.
+1. Now that your MCP server configuration is pushed to GitHub, Byte should already be busy checking your work. Give them a moment and keep watch in the comments. You will see Byte respond with progress info and the next lesson.
 
 > [!NOTE]
 > The next steps will involve creating GitHub issues. If you would like to avoid notification emails, you can unwatch the repository.
