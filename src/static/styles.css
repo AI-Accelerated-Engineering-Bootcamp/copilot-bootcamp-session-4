@@ -263,6 +263,28 @@ footer {
   border-radius: 50%;
 }
 
+/* Header mascot styling */
+.header-text h1 {
+  margin-bottom: 5px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.header-text h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  opacity: 0.9;
+  font-weight: normal;
+}
+
+.mascot {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 /* Responsive design improvements */
 @media (max-width: 768px) {
   .header-content {
