@@ -1,59 +1,61 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const activitiesList = document.getElementById("activities-list");
-  const activitySelect = document.getElementById("activity");
-  const signupForm = document.getElementById("signup-form");
+  const capabilitiesList = document.getElementById("capabilities-list");
+  const capabilitySelect = document.getElementById("capability");
+  const registerForm = document.getElementById("register-form");
   const messageDiv = document.getElementById("message");
 
-  // Function to fetch activities from API
-  async function fetchActivities() {
+  // Function to fetch capabilities from API
+  async function fetchCapabilities() {
     try {
-      const response = await fetch("/activities");
-      const activities = await response.json();
+      const response = await fetch("/capabilities");
+      const capabilities = await response.json();
 
       // Clear loading message
-      activitiesList.innerHTML = "";
+      capabilitiesList.innerHTML = "";
 
-      // Populate activities list
-      Object.entries(activities).forEach(([name, details]) => {
-        const activityCard = document.createElement("div");
-        activityCard.className = "activity-card";
+      // Populate capabilities list
+      Object.entries(capabilities).forEach(([name, details]) => {
+        const capabilityCard = document.createElement("div");
+        capabilityCard.className = "capability-card";
 
-        const spotsLeft =
-          details.max_participants - details.participants.length;
+        const availableCapacity = details.capacity || 0;
+        const currentConsultants = details.consultants ? details.consultants.length : 0;
 
-        // Create participants HTML with delete icons instead of bullet points
-        const participantsHTML =
-          details.participants.length > 0
-            ? `<div class="participants-section">
-              <h5>Participants:</h5>
-              <ul class="participants-list">
-                ${details.participants
+        // Create consultants HTML with delete icons
+        const consultantsHTML =
+          details.consultants && details.consultants.length > 0
+            ? `<div class="consultants-section">
+              <h5>Registered Consultants:</h5>
+              <ul class="consultants-list">
+                ${details.consultants
                   .map(
                     (email) =>
-                      `<li><span class="participant-email">${email}</span><button class="delete-btn" data-activity="${name}" data-email="${email}">❌</button></li>`
+                      `<li><span class="consultant-email">${email}</span><button class="delete-btn" data-capability="${name}" data-email="${email}">❌</button></li>`
                   )
                   .join("")}
               </ul>
             </div>`
-            : `<p><em>No participants yet</em></p>`;
+            : `<p><em>No consultants registered yet</em></p>`;
 
-        activityCard.innerHTML = `
+        capabilityCard.innerHTML = `
           <h4>${name}</h4>
           <p>${details.description}</p>
-          <p><strong>Schedule:</strong> ${details.schedule}</p>
-          <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
-          <div class="participants-container">
-            ${participantsHTML}
+          <p><strong>Practice Area:</strong> ${details.practice_area}</p>
+          <p><strong>Industry Verticals:</strong> ${details.industry_verticals ? details.industry_verticals.join(', ') : 'Not specified'}</p>
+          <p><strong>Capacity:</strong> ${availableCapacity} hours/week available</p>
+          <p><strong>Current Team:</strong> ${currentConsultants} consultants</p>
+          <div class="consultants-container">
+            ${consultantsHTML}
           </div>
         `;
 
-        activitiesList.appendChild(activityCard);
+        capabilitiesList.appendChild(capabilityCard);
 
         // Add option to select dropdown
         const option = document.createElement("option");
         option.value = name;
         option.textContent = name;
-        activitySelect.appendChild(option);
+        capabilitySelect.appendChild(option);
       });
 
       // Add event listeners to delete buttons
@@ -61,22 +63,22 @@ document.addEventListener("DOMContentLoaded", () => {
         button.addEventListener("click", handleUnregister);
       });
     } catch (error) {
-      activitiesList.innerHTML =
-        "<p>Failed to load activities. Please try again later.</p>";
-      console.error("Error fetching activities:", error);
+      capabilitiesList.innerHTML =
+        "<p>Failed to load capabilities. Please try again later.</p>";
+      console.error("Error fetching capabilities:", error);
     }
   }
 
   // Handle unregister functionality
   async function handleUnregister(event) {
     const button = event.target;
-    const activity = button.getAttribute("data-activity");
+    const capability = button.getAttribute("data-capability");
     const email = button.getAttribute("data-email");
 
     try {
       const response = await fetch(
-        `/activities/${encodeURIComponent(
-          activity
+        `/capabilities/${encodeURIComponent(
+          capability
         )}/unregister?email=${encodeURIComponent(email)}`,
         {
           method: "DELETE",
@@ -89,8 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
         messageDiv.textContent = result.message;
         messageDiv.className = "success";
 
-        // Refresh activities list to show updated participants
-        fetchActivities();
+        // Refresh capabilities list to show updated consultants
+        fetchCapabilities();
       } else {
         messageDiv.textContent = result.detail || "An error occurred";
         messageDiv.className = "error";
@@ -111,17 +113,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Handle form submission
-  signupForm.addEventListener("submit", async (event) => {
+  registerForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const email = document.getElementById("email").value;
-    const activity = document.getElementById("activity").value;
+    const capability = document.getElementById("capability").value;
 
     try {
       const response = await fetch(
-        `/activities/${encodeURIComponent(
-          activity
-        )}/signup?email=${encodeURIComponent(email)}`,
+        `/capabilities/${encodeURIComponent(
+          capability
+        )}/register?email=${encodeURIComponent(email)}`,
         {
           method: "POST",
         }
@@ -132,10 +134,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (response.ok) {
         messageDiv.textContent = result.message;
         messageDiv.className = "success";
-        signupForm.reset();
+        registerForm.reset();
 
-        // Refresh activities list to show updated participants
-        fetchActivities();
+        // Refresh capabilities list to show updated consultants
+        fetchCapabilities();
       } else {
         messageDiv.textContent = result.detail || "An error occurred";
         messageDiv.className = "error";
@@ -148,13 +150,13 @@ document.addEventListener("DOMContentLoaded", () => {
         messageDiv.classList.add("hidden");
       }, 5000);
     } catch (error) {
-      messageDiv.textContent = "Failed to sign up. Please try again.";
+      messageDiv.textContent = "Failed to register. Please try again.";
       messageDiv.className = "error";
       messageDiv.classList.remove("hidden");
-      console.error("Error signing up:", error);
+      console.error("Error registering:", error);
     }
   });
 
   // Initialize app
-  fetchActivities();
+  fetchCapabilities();
 });

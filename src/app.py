@@ -1,8 +1,8 @@
 """
-High School Management System API
+Slalom Capabilities Management System API
 
-A super simple FastAPI application that allows students to view and sign up
-for extracurricular activities at Mergington High School.
+A FastAPI application that enables Slalom consultants to register their
+capabilities and manage consulting expertise across the organization.
 """
 
 from fastapi import FastAPI, HTTPException
@@ -11,69 +11,96 @@ from fastapi.responses import RedirectResponse
 import os
 from pathlib import Path
 
-app = FastAPI(title="Mergington High School API",
-              description="API for viewing and signing up for extracurricular activities")
+app = FastAPI(title="Slalom Capabilities Management API",
+              description="API for managing consulting capabilities and consultant expertise")
 
 # Mount the static files directory
 current_dir = Path(__file__).parent
 app.mount("/static", StaticFiles(directory=os.path.join(Path(__file__).parent,
           "static")), name="static")
 
-# In-memory activity database
-activities = {
-    "Chess Club": {
-        "description": "Learn strategies and compete in chess tournaments",
-        "schedule": "Fridays, 3:30 PM - 5:00 PM",
-        "max_participants": 12,
-        "participants": ["michael@mergington.edu", "daniel@mergington.edu"]
+# In-memory capabilities database
+capabilities = {
+    "Cloud Architecture": {
+        "description": "Design and implement scalable cloud solutions using AWS, Azure, and GCP",
+        "practice_area": "Technology",
+        "skill_levels": ["Emerging", "Proficient", "Advanced", "Expert"],
+        "certifications": ["AWS Solutions Architect", "Azure Architect Expert"],
+        "industry_verticals": ["Healthcare", "Financial Services", "Retail"],
+        "capacity": 40,  # hours per week available across team
+        "consultants": ["alice.smith@slalom.com", "bob.johnson@slalom.com"]
     },
-    "Programming Class": {
-        "description": "Learn programming fundamentals and build software projects",
-        "schedule": "Tuesdays and Thursdays, 3:30 PM - 4:30 PM",
-        "max_participants": 20,
-        "participants": ["emma@mergington.edu", "sophia@mergington.edu"]
+    "Data Analytics": {
+        "description": "Advanced data analysis, visualization, and machine learning solutions",
+        "practice_area": "Technology", 
+        "skill_levels": ["Emerging", "Proficient", "Advanced", "Expert"],
+        "certifications": ["Tableau Desktop Specialist", "Power BI Expert", "Google Analytics"],
+        "industry_verticals": ["Retail", "Healthcare", "Manufacturing"],
+        "capacity": 35,
+        "consultants": ["emma.davis@slalom.com", "sophia.wilson@slalom.com"]
     },
-    "Gym Class": {
-        "description": "Physical education and sports activities",
-        "schedule": "Mondays, Wednesdays, Fridays, 2:00 PM - 3:00 PM",
-        "max_participants": 30,
-        "participants": ["john@mergington.edu", "olivia@mergington.edu"]
+    "DevOps Engineering": {
+        "description": "CI/CD pipeline design, infrastructure automation, and containerization",
+        "practice_area": "Technology",
+        "skill_levels": ["Emerging", "Proficient", "Advanced", "Expert"], 
+        "certifications": ["Docker Certified Associate", "Kubernetes Admin", "Jenkins Certified"],
+        "industry_verticals": ["Technology", "Financial Services"],
+        "capacity": 30,
+        "consultants": ["john.brown@slalom.com", "olivia.taylor@slalom.com"]
     },
-    "Soccer Team": {
-        "description": "Join the school soccer team and compete in matches",
-        "schedule": "Tuesdays and Thursdays, 4:00 PM - 5:30 PM",
-        "max_participants": 22,
-        "participants": ["liam@mergington.edu", "noah@mergington.edu"]
+    "Digital Strategy": {
+        "description": "Digital transformation planning and strategic technology roadmaps",
+        "practice_area": "Strategy",
+        "skill_levels": ["Emerging", "Proficient", "Advanced", "Expert"],
+        "certifications": ["Digital Transformation Certificate", "Agile Certified Practitioner"],
+        "industry_verticals": ["Healthcare", "Financial Services", "Government"],
+        "capacity": 25,
+        "consultants": ["liam.anderson@slalom.com", "noah.martinez@slalom.com"]
     },
-    "Basketball Team": {
-        "description": "Practice and play basketball with the school team",
-        "schedule": "Wednesdays and Fridays, 3:30 PM - 5:00 PM",
-        "max_participants": 15,
-        "participants": ["ava@mergington.edu", "mia@mergington.edu"]
+    "Change Management": {
+        "description": "Organizational change leadership and adoption strategies",
+        "practice_area": "Operations",
+        "skill_levels": ["Emerging", "Proficient", "Advanced", "Expert"],
+        "certifications": ["Prosci Certified", "Lean Six Sigma Black Belt"],
+        "industry_verticals": ["Healthcare", "Manufacturing", "Government"],
+        "capacity": 20,
+        "consultants": ["ava.garcia@slalom.com", "mia.rodriguez@slalom.com"]
     },
-    "Art Club": {
-        "description": "Explore your creativity through painting and drawing",
-        "schedule": "Thursdays, 3:30 PM - 5:00 PM",
-        "max_participants": 15,
-        "participants": ["amelia@mergington.edu", "harper@mergington.edu"]
+    "UX/UI Design": {
+        "description": "User experience design and digital product innovation",
+        "practice_area": "Technology",
+        "skill_levels": ["Emerging", "Proficient", "Advanced", "Expert"],
+        "certifications": ["Adobe Certified Expert", "Google UX Design Certificate"],
+        "industry_verticals": ["Retail", "Healthcare", "Technology"],
+        "capacity": 30,
+        "consultants": ["amelia.lee@slalom.com", "harper.white@slalom.com"]
     },
-    "Drama Club": {
-        "description": "Act, direct, and produce plays and performances",
-        "schedule": "Mondays and Wednesdays, 4:00 PM - 5:30 PM",
-        "max_participants": 20,
-        "participants": ["ella@mergington.edu", "scarlett@mergington.edu"]
+    "Cybersecurity": {
+        "description": "Information security strategy, risk assessment, and compliance",
+        "practice_area": "Technology",
+        "skill_levels": ["Emerging", "Proficient", "Advanced", "Expert"],
+        "certifications": ["CISSP", "CISM", "CompTIA Security+"],
+        "industry_verticals": ["Financial Services", "Healthcare", "Government"],
+        "capacity": 25,
+        "consultants": ["ella.clark@slalom.com", "scarlett.lewis@slalom.com"]
     },
-    "Math Club": {
-        "description": "Solve challenging problems and participate in math competitions",
-        "schedule": "Tuesdays, 3:30 PM - 4:30 PM",
-        "max_participants": 10,
-        "participants": ["james@mergington.edu", "benjamin@mergington.edu"]
+    "Business Intelligence": {
+        "description": "Enterprise reporting, data warehousing, and business analytics",
+        "practice_area": "Technology",
+        "skill_levels": ["Emerging", "Proficient", "Advanced", "Expert"],
+        "certifications": ["Microsoft BI Certification", "Qlik Sense Certified"],
+        "industry_verticals": ["Retail", "Manufacturing", "Financial Services"],
+        "capacity": 35,
+        "consultants": ["james.walker@slalom.com", "benjamin.hall@slalom.com"]
     },
-    "Debate Team": {
-        "description": "Develop public speaking and argumentation skills",
-        "schedule": "Fridays, 4:00 PM - 5:30 PM",
-        "max_participants": 12,
-        "participants": ["charlotte@mergington.edu", "henry@mergington.edu"]
+    "Agile Coaching": {
+        "description": "Agile transformation and team coaching for scaled delivery",
+        "practice_area": "Operations",
+        "skill_levels": ["Emerging", "Proficient", "Advanced", "Expert"],
+        "certifications": ["Certified Scrum Master", "SAFe Agilist", "ICAgile Certified"],
+        "industry_verticals": ["Technology", "Financial Services", "Healthcare"],
+        "capacity": 20,
+        "consultants": ["charlotte.young@slalom.com", "henry.king@slalom.com"]
     }
 }
 
@@ -83,50 +110,50 @@ def root():
     return RedirectResponse(url="/static/index.html")
 
 
-@app.get("/activities")
-def get_activities():
-    return activities
+@app.get("/capabilities")
+def get_capabilities():
+    return capabilities
 
 
-@app.post("/activities/{activity_name}/signup")
-def signup_for_activity(activity_name: str, email: str):
-    """Sign up a student for an activity"""
-    # Validate activity exists
-    if activity_name not in activities:
-        raise HTTPException(status_code=404, detail="Activity not found")
+@app.post("/capabilities/{capability_name}/register")
+def register_for_capability(capability_name: str, email: str):
+    """Register a consultant for a capability"""
+    # Validate capability exists
+    if capability_name not in capabilities:
+        raise HTTPException(status_code=404, detail="Capability not found")
 
-    # Get the specific activity
-    activity = activities[activity_name]
+    # Get the specific capability
+    capability = capabilities[capability_name]
 
-    # Validate student is not already signed up
-    if email in activity["participants"]:
+    # Validate consultant is not already registered
+    if email in capability["consultants"]:
         raise HTTPException(
             status_code=400,
-            detail="Student is already signed up"
+            detail="Consultant is already registered for this capability"
         )
 
-    # Add student
-    activity["participants"].append(email)
-    return {"message": f"Signed up {email} for {activity_name}"}
+    # Add consultant
+    capability["consultants"].append(email)
+    return {"message": f"Registered {email} for {capability_name}"}
 
 
-@app.delete("/activities/{activity_name}/unregister")
-def unregister_from_activity(activity_name: str, email: str):
-    """Unregister a student from an activity"""
-    # Validate activity exists
-    if activity_name not in activities:
-        raise HTTPException(status_code=404, detail="Activity not found")
+@app.delete("/capabilities/{capability_name}/unregister")
+def unregister_from_capability(capability_name: str, email: str):
+    """Unregister a consultant from a capability"""
+    # Validate capability exists
+    if capability_name not in capabilities:
+        raise HTTPException(status_code=404, detail="Capability not found")
 
-    # Get the specific activity
-    activity = activities[activity_name]
+    # Get the specific capability
+    capability = capabilities[capability_name]
 
-    # Validate student is signed up
-    if email not in activity["participants"]:
+    # Validate consultant is registered
+    if email not in capability["consultants"]:
         raise HTTPException(
             status_code=400,
-            detail="Student is not signed up for this activity"
+            detail="Consultant is not registered for this capability"
         )
 
-    # Remove student
-    activity["participants"].remove(email)
-    return {"message": f"Unregistered {email} from {activity_name}"}
+    # Remove consultant
+    capability["consultants"].remove(email)
+    return {"message": f"Unregistered {email} from {capability_name}"}

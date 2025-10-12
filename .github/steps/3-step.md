@@ -1,12 +1,12 @@
 ## Step 3: Solve issues with Agent Mode and GitHub MCP Server
 
-Great work doing that research and finding a potential collaboration opportunity.
-Not only did we find some new ideas to help organize extracurricular activities, but we did all that quickly too.
+Great work doing that research and finding potential consulting platform enhancements.
+Not only did we find some new ideas to help manage consulting capabilities, but we did all that quickly too.
 
-Plenty of time to focus on the fun stuff, like teaching our awesome students! 🌱
+Plenty of time to focus on the fun stuff, like serving our awesome clients and growing our consultants' skills! 🌱
 
-On that note, it seems the teachers have also been active.
-Looks like they submitted some bugs and requests! Perfect! 🚀
+On that note, it seems the practice leads have also been active.
+Looks like they submitted some capability enhancement requests! Perfect! 🚀
 
 Now, let's use our MCP server's tools and Copilot to do a bit of triage and get some work done.
 
@@ -55,9 +55,9 @@ Now, let's use our MCP server's tools and Copilot to do a bit of triage and get 
    > 3. Push the changes and start a pull request.
    > ```
 
-   > ⚠️ **Warning:** Always verify the the actions Copilot is asking to perform, especially with the external abilities provided by an MCP server, which probably have no undo option.
+   > ⚠️ **Warning:** Always verify the actions Copilot is asking to perform, especially with the external abilities provided by an MCP server, which probably have no undo option.
 
-1. Once the pull request is created, Mona will start checking your work. Give her a moment and keep watch of the comments. You will see her respond with progress info and the next step!
+1. Once the pull request is created, Byte will start checking your work. Give them a moment and keep watch of the comments. You will see Byte respond with progress info and the next step!
 
 <details>
 <summary>Having trouble?</summary><br/>

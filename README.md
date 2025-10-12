@@ -1,48 +1,79 @@
-# Integrate MCP with GitHub Copilot
+# AI Accelerated Engineering Bootcamp - Slalom Capabilities MCP Integration
 
-_Learn how to give GitHub Copilot more tools to expand the capabilities of your development workflow. All in less than an hour!_
+<p align="center">
+  <img src="https://colby-timm.github.io/images/byte-manufacturing.png" alt="Byte Manufacturing" width="300" />
+</p>
 
-## Welcome
+> **Empowering teams to leverage AI coding assistants for faster, higher‑quality software delivery—with the right context, workflows, and guardrails.**
 
-- **Who is this for**: Developers looking to enhance their AI-assisted workflows, GitHub Copilot users, and AI enthusiasts.
-- **What you'll learn**: We'll introduce MCP basics, a GitHub MCP server setup, and integration with Copilot Agent Mode.
-- **What you'll build**: A mixed development workflow that uses GitHub Copilot to manage issues while upgrading the extracurricular activities website for Mergington High School.
-- **Prerequisites**: [Getting Started with Copilot](https://github.com/skills/getting-started-with-github-copilot) Exercise
-- **How long**: This exercise takes less than one hour to complete.
+## Purpose
+
+Learn how to give GitHub Copilot more tools to expand the capabilities of your development workflow by integrating Model Context Protocol (MCP) with a Slalom consulting capabilities management system. This exercise demonstrates how AI can streamline consulting operations while teaching core MCP concepts.
+
+## Quick Start (Skill Lab)
+
+1. Fork this repository to your own GitHub account.
+2. After the fork finishes, open the Actions tab in your fork - a GitHub Actions workflow should start automatically.
+3. When the workflow completes, a GitHub Issue will be created in your fork to guide the next steps of the lab.
+
+That's it. The lab automation (workflow + seeded issue) is the only thing you need to verify to begin.
+
+## If Something Doesn't Happen
+
+If you do NOT see a workflow run within ~30 seconds of forking:
+
+- Refresh the Actions tab once
+- Ensure Actions are enabled for your fork (Repository Settings > Actions)
+- Manually trigger any visible workflow if it shows a "Run workflow" button
+
+If the expected Issue wasn't created after the workflow succeeds:
+
+- Open the workflow run log and look for any failed steps
+- Re-run the workflow (top-right "Re-run jobs")
+
+## Next Steps After Automation
+
+Once the Issue appears, follow its guidance to work through the exercise using Copilot Agent mode.
+
+## What You'll Learn & Build
+
+- **Who is this for**: Slalom consultants, developers, and teams looking to enhance their AI-assisted workflows
+- **What you'll learn**: MCP basics, GitHub MCP server setup, and integration with Copilot Agent Mode for consulting scenarios
+- **What you'll build**: A capabilities management system for Slalom consultants that uses GitHub Copilot to manage issues while upgrading the consulting capabilities platform
+- **Prerequisites**: Basic knowledge of [GitHub Copilot](https://github.com/features/copilot) - see the [Getting Started with Copilot](https://github.com/skills/getting-started-with-github-copilot) exercise if needed
+- **How long**: This exercise takes less than one hour to complete
 
 In this exercise, you will:
 
-1. Integrate a GitHub MCP server with GitHub Copilot.
-2. Delegate Copilot to research similar projects and open issues.
-3. Ask Copilot to find an important issue and implement it from idea to pull request.
-4. Add comments to a recently closed issue.
+1. Integrate a GitHub MCP server with GitHub Copilot for consulting scenarios
+2. Delegate Copilot to research similar consulting platforms and open improvement issues
+3. Ask Copilot to find an important capability enhancement and implement it from idea to pull request
+4. Experience AI-assisted consulting workflow automation
 
-### How to start this exercise
+## Tech Stack Snapshot
 
-> [!IMPORTANT]
-> This exercise assumes basic knowledge of [GitHub Copilot](https://github.com/features/copilot). If you are unfamiliar, we recommend the [Getting Started with Copilot](https://github.com/skills/getting-started-with-github-copilot) exercise.
+- Frontend: HTML, CSS, JavaScript (transitioning to React-based capabilities dashboard)
+- Backend: Python FastAPI (consulting capabilities management)
+- MCP Integration: GitHub MCP Server
+- AI Assistant: GitHub Copilot with Agent Mode
+- Package management: pip/requirements.txt
 
-Simply copy the exercise to your account, then give your favorite Octocat (Mona) **about 20 seconds** to prepare the first lesson, then **refresh the page**.
+## Learning Objectives
 
-[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=skills&template_name=integrate-mcp-with-copilot&owner=%40me&name=skills-integrate-mcp-with-copilot&description=Exercise:+Integrate+Model+Context+Protocol+with+GitHub+Copilot&visibility=public)
-
-<details>
-<summary>Having trouble? 🤷</summary><br/>
-
-When copying the exercise, we recommend the following settings:
-
-- For owner, choose your personal account or an organization to host the repository.
-
-- We recommend creating a public repository, since private repositories will use Actions minutes.
-
-If the exercise isn't ready in 20 seconds, please check the [Actions](../../actions) tab.
-
-- Check to see if a job is running. Sometimes it simply takes a bit longer.
-
-- If the page shows a failed job, please submit an issue. Nice, you found a bug! 🐛
-
-</details>
+This exercise demonstrates practical applications of MCP in professional consulting environments:
+- Capability tracking and management for consulting teams
+- AI-assisted project planning and issue management
+- Integration of MCP servers with business workflows
+- Professional dashboard development for client-facing applications
 
 ---
 
-&copy; 2025 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
+**Part of the [AI Accelerated Engineering Bootcamp](https://github.com/colby-timm/copilot-bootcamp-overview)**
+
+## License and Conduct
+
+&copy; 2025 Slalom &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
+
+---
+
+> 🎉 Happy hacking – fork, watch the workflow, find the Issue, and dive in with Copilot.
