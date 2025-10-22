@@ -9,6 +9,9 @@ _Congratulations, you've completed this Exercise and learned the basics of MCP f
 
 Check out these resources to learn more or get involved:
 
-- [Our Next Session](https://github.com/AI-Accelerated-Engineering-Bootcamp/copilot-bootcamp-session-5).
+#### Session 5 Preview: Agentic Development
+- [Our Next Session](https://github.com/AI-Accelerated-Engineering-Bootcamp/copilot-bootcamp-session-5)
+
+#### Resources to enhance your GitHub Copilot skills
 - Learn more about [Model Context Protocol](https://modelcontextprotocol.io/introduction)
 - Try other MCP servers! GitHub is just one of [many](https://github.com/modelcontextprotocol/servers)

@@ -1,4 +1,4 @@
-# AI Accelerated Engineering Bootcamp - Slalom Capabilities MCP Integration
+# AI Coding Assistant Enablement Bootcamp Session 4 - MCP Integration
 
 <p align="center">
   <img src="https://colby-timm.github.io/images/byte-manufacturing.png" alt="Byte Manufacturing" width="300" />

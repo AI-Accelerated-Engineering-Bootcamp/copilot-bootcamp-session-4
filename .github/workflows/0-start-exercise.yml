@@ -20,7 +20,7 @@ jobs:
     name: Start Exercise
     uses: skills/exercise-toolkit/.github/workflows/start-exercise.yml@v0.6.0
     with:
-      exercise-title: "Slalom Capabilities MCP Integration"
+      exercise-title: "AI Coding Assistant Enablement Bootcamp Session 4"
       intro-message: "This exercise will help you learn how to expand GitHub Copilot's capabilities with Model Context Protocol (MCP) while building a Slalom consulting capabilities management system."
 
   post_next_step_content:
